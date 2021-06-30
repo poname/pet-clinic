@@ -19,4 +19,19 @@ public class OwnerServiceImpl implements OwnerService {
     public Set<Owner> findAll() {
         return null;
     }
+
+    @Override
+    public void delete(Owner owner) {
+
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
+    }
+    
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
 }
