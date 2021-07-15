@@ -19,9 +19,14 @@ repositories {
 }
 
 dependencies {
+    implementation project(':pet-clinic-web')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
     useJUnitPlatform()
+}
+
+springBoot {
+    mainClass.set('com.hospital.petclinic.PetClinicApplication')
 }

@@ -1,3 +1,9 @@
+buildscript {
+    dependencies {
+        classpath 'ro.isdc.wro4j.gradle:wro4j-gradle-plugin:1.8.0.Beta4'
+    }
+}
+
 plugins {
     id 'org.springframework.boot'
     id 'io.spring.dependency-management'
@@ -8,8 +14,17 @@ group 'com.hospital'
 version '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
+apply plugin: 'wro4j'
+
 repositories {
     mavenCentral()
+    jcenter()
+}
+
+ext {
+    webjarsJqueryVersion = '2.1.4'
+    webjarsJqueryUiVersion = '1.11.4'
+    webjarsBootstrapVersion = '3.3.4'
 }
 
 dependencies {
@@ -17,7 +32,25 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    //implementation 'ro.isdc.wro4j.gradle:wro4j-gradle-plugin:1.8.0.Beta4'
+    webjarsRuntime 'org.webjars:webjars-locator-core'
+    webjarsRuntime "org.webjars:jquery:${webjarsJqueryVersion}"
+    webjarsRuntime "org.webjars:jquery-ui:${webjarsJqueryUiVersion}"
+    webjarsRuntime "org.webjars:bootstrap:${webjarsBootstrapVersion}"
+
     implementation project(':pet-clinic-data')
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+webResources {
+    srcMainDir = layout.projectDirectory.dir('src/main').asFile
+    dstStaticFolder = 'static/resources/css'
+    bundle ('petclinic') {
+        css 'webjars/bootstrap/3.3.6/less/bootstrap.less'
+        css 'less/petclinic.less'
+        preProcessor 'lessCssImport'
+        postProcessor 'less4j'
+    }
+}
+
