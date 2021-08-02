@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Profile("springdatajpa")
-public class OwnerSDJpaService extends CrudSDJpa<Owner, OwnerRepository, Long> implements OwnerService {
+public class OwnerSDJpaService extends CrudSDJpaService<Owner, OwnerRepository, Long> implements OwnerService {
 
     private final PetRepository petRepository;
     private final PetTypeRepository petTypeRepository;

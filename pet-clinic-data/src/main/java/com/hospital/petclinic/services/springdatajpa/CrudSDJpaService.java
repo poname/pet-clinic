@@ -8,11 +8,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class CrudSDJpa<T extends BaseEntity, S extends CrudRepository<T, ID>, ID extends Long> implements CrudService<T, ID> {
+public class CrudSDJpaService<T extends BaseEntity, S extends CrudRepository<T, ID>, ID extends Long> implements CrudService<T, ID> {
 
     protected final S crudRepository;
 
-    public CrudSDJpa(S crudRepository) {
+    public CrudSDJpaService(S crudRepository) {
         this.crudRepository = crudRepository;
     }
 

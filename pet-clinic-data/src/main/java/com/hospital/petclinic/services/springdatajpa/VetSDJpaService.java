@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Profile("springdatajpa")
-public class VetSDJpaService extends CrudSDJpa<Vet, VetRepository, Long> implements VetService {
+public class VetSDJpaService extends CrudSDJpaService<Vet, VetRepository, Long> implements VetService {
     
     public VetSDJpaService(VetRepository crudRepository) {
         super(crudRepository);
