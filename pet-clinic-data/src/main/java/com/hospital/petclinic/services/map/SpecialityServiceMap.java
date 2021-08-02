@@ -1,7 +1,7 @@
-package com.hospital.petclinic.service.map;
+package com.hospital.petclinic.services.map;
 
 import com.hospital.petclinic.model.Speciality;
-import com.hospital.petclinic.service.SpecialityService;
+import com.hospital.petclinic.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;

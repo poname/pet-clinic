@@ -1,7 +1,7 @@
 package com.hospital.petclinic.bootstrap;
 
 import com.hospital.petclinic.model.*;
-import com.hospital.petclinic.service.*;
+import com.hospital.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

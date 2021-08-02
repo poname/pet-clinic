@@ -1,7 +1,7 @@
-package com.hospital.petclinic.service.map;
+package com.hospital.petclinic.services.map;
 
 import com.hospital.petclinic.model.BaseEntity;
-import com.hospital.petclinic.service.CrudService;
+import com.hospital.petclinic.services.CrudService;
 
 import java.util.Set;
 
