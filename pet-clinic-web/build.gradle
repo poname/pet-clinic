@@ -43,6 +43,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+test {
+    useJUnitPlatform()
+}
+
 webResources {
     srcMainDir = layout.projectDirectory.dir('src/main').asFile
     dstStaticFolder = 'static/resources/css'
